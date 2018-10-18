@@ -12,13 +12,19 @@ class Solution:
         :type t2: TreeNode
         :rtype: TreeNode
         """
-        if(t1 != None and t2!= None):
-            t1.val += t2.val
-            print("111")
-            self.mergeTrees(t1.left,t2.left)
-            self.mergeTrees(t1.right,t2.right)
-        elif(t1==None):
-            t1 = t2   #前半部分无法连接
+        # if(t1 != None and t2!= None):
+        #     t1.val += t2.val
+        #     self.mergeTrees(t1.left,t2.left)
+        #     self.mergeTrees(t1.right,t2.right)
+        # elif(t1==None):
+        #     t1 = t2   #前半部分无法连接
+        if(t1 == None):
+            return t2
+        if(t2 == None):
+            return t1
+        t1.val += t2.val
+        t1.left = self.mergeTrees(t1.left,t2.left)
+        t1.right = self.mergeTrees(t1.right,t2.right)
 
         return t1
 if __name__=='__main__':
