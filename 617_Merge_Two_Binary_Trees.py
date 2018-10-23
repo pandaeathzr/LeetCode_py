@@ -18,6 +18,8 @@ class Solution:
         #     self.mergeTrees(t1.right,t2.right)
         # elif(t1==None):
         #     t1 = t2   #前半部分无法连接
+
+        """Runtime: 176 ms, faster than 10.55% of Python3 online submissions for Merge Two Binary Trees."""
         if(t1 == None):
             return t2
         if(t2 == None):
